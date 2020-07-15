@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./components/App";
 import { ThemeProvider } from "@material-ui/core";
 import theme from "./theme";
+import { ContextProvider } from "./context/context";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <ContextProvider>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </ContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -1,7 +1,15 @@
-import React from "react";
-import { TextField, Grid, makeStyles, Button } from "@material-ui/core";
+import React, { useContext } from "react";
+import {
+  TextField,
+  Grid,
+  makeStyles,
+  Button,
+  Typography,
+} from "@material-ui/core";
 import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { SupplierContext } from "../context/context";
+import TYPES from "../context/types";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SupplierCreationForm = () => {
+  const { dispatch } = useContext(SupplierContext);
   const classes = useStyles();
 
   const initialValues = {
@@ -39,7 +48,7 @@ const SupplierCreationForm = () => {
     setSubmitting(true);
 
     setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
+      dispatch({ type: TYPES.ADD_SUPPLIER, payload: values });
       resetForm();
       setSubmitting(false);
     }, 500);
@@ -69,10 +78,12 @@ const SupplierCreationForm = () => {
           isSubmitting,
           setFieldValue,
         }) => (
-          <form onSubmit={handleSubmit} autoComplete="false">
-            <h2>Supplier Creation Page</h2>
+          <form onSubmit={handleSubmit} autoComplete="off">
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <Typography variant="h4">Supplier Creation Page</Typography>
+              </Grid>
 
-            <Grid container spacing={3} alignItems="center">
               <Grid item xs={12}>
                 <TextField
                   id="supplierName"

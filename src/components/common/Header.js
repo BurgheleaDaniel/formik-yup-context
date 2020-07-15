@@ -19,21 +19,23 @@ const Header = () => {
   const classes = useStyles();
 
   return (
-    <AppBar position="static">
-      <Toolbar className={classes.toolbarStyles}>
-        <p className={classes.typographyStyles}>
-          <img
-            src="https://www.webbeds.com/wp-content/themes/webbeds-v2/assets/images/logo.svg"
-            alt="Webbeds logo"
-          />
-        </p>
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar className={classes.toolbarStyles}>
+          <p className={classes.typographyStyles}>
+            <img
+              src="https://www.webbeds.com/wp-content/themes/webbeds-v2/assets/images/logo.svg"
+              alt="Webbeds logo"
+            />
+          </p>
 
-        <IconButton className={classes.iconStyles}>
-          <Typography>Login</Typography>
-          <AcUnitIcon />
-        </IconButton>
-      </Toolbar>
-    </AppBar>
+          <IconButton className={classes.iconStyles}>
+            <Typography>Login</Typography>
+            <AcUnitIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+    </div>
   );
 };
 
