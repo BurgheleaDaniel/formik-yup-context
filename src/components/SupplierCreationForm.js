@@ -1,37 +1,12 @@
 import React, { useContext } from "react";
-import {
-  TextField,
-  Grid,
-  makeStyles,
-  Button,
-  Typography,
-} from "@material-ui/core";
+import { TextField, Grid, Button, Typography } from "@material-ui/core";
 import { Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { SupplierContext } from "../context/context";
 import TYPES from "../context/types";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  typographyStyles: {
-    flex: 1,
-  },
-  iconsStyles: {
-    color: "#fff",
-  },
-  buttonsStyles: {
-    color: "#fff",
-    background: "red",
-    padding: "10px 50px",
-    marginTop: 30,
-  },
-}));
-
 const SupplierCreationForm = () => {
   const { dispatch } = useContext(SupplierContext);
-  const classes = useStyles();
 
   const initialValues = {
     supplierName: "",
@@ -75,8 +50,6 @@ const SupplierCreationForm = () => {
           handleChange,
           handleBlur,
           handleSubmit,
-          isSubmitting,
-          setFieldValue,
         }) => (
           <form onSubmit={handleSubmit} autoComplete="off">
             <Grid container spacing={2}>
@@ -206,16 +179,7 @@ const SupplierCreationForm = () => {
               justify="flex-end"
               alignItems="center"
             >
-              <Button
-                variant="contained"
-                size="large"
-                className={classes.buttonsStyles}
-                type="submit"
-                disabled={isSubmitting}
-                m={50}
-              >
-                Submit
-              </Button>
+              <Button>Submit</Button>
             </Grid>
           </form>
         )}

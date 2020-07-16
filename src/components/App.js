@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, IconButton } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import Header from "./common/Header";
 import SupplierCreationForm from "./SupplierCreationForm";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

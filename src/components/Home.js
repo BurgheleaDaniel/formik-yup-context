@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Grid, Box } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import HomeWorkIcon from "@material-ui/icons/HomeWork";
 import ListIcon from "@material-ui/icons/List";
